@@ -581,3 +581,6 @@ ul.checklist li::before{content:"□ ";color:var(--text-dim)}
 .eng-meta{font-size:11px;color:var(--text-dim);opacity:.8}
 .eng-meta code{font-size:11px}
 .mt-2{margin-top:.6em}
+/* ── 双语正文（P5i18n）── */
+.bi-block{margin:0}
+.bi-block > span{display:block}
