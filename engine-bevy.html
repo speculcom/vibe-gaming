@@ -49,15 +49,15 @@
 
         <div class="panel term-meta">
           <p class="t-lead"><span data-zh>**对 AI 的友好度**</span><span data-en>**How AI-friendly it is**</span><span data-zh>：★☆☆☆（不友好）</span><span data-en>: ★☆☆☆ (unfriendly)</span></p>
-          <p class="t-sm"><span data-zh>**一句话**</span><span data-en>**In one line**</span><span data-zh>：AI 最容易写错的主流引擎 —— 但它的架构可能是最干净的。</span><span data-en>: AI 最容易写错的主流引擎 —— 但它的架构可能是最干净的。</span></p>
-          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：⚠ 如果用 AI 写 Bevy，改用 Web 引擎。除非你本人就是 Rust 开发者。</span><span data-en>: ⚠ 如果用 AI 写 Bevy，改用 Web 引擎。除非你本人就是 Rust 开发者。</span></p>
-          <p class="t-sm"><span data-zh>**适合**</span><span data-en>**Best for**</span><span data-zh>：⚠ 熟悉 Rust 且愿意被 AI 拖累的人</span><span data-en>: ⚠ 熟悉 Rust 且愿意被 AI 拖累的人</span></p>
+          <p class="t-sm"><span data-zh>**一句话**</span><span data-en>**In one line**</span><span data-zh>：AI 最容易写错的主流引擎 —— 但它的架构可能是最干净的。</span><span data-en>: The mainstream engine AI gets wrong most easily — and yet its architecture may be the cleanest.</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：⚠ 如果用 AI 写 Bevy，改用 Web 引擎。除非你本人就是 Rust 开发者。</span><span data-en>: ⚠ If AI is writing your Bevy code, use a web engine instead — unless you are a Rust developer yourself.</span></p>
+          <p class="t-sm"><span data-zh>**适合**</span><span data-en>**Best for**</span><span data-zh>：⚠ 熟悉 Rust 且愿意被 AI 拖累的人</span><span data-en>: ⚠ People who know Rust and accept being slowed down by AI</span></p>
           <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span> · <span data-zh>事实核验：2026-10-05 · GitHub API 快照</span><span data-en>Facts verified: 2026-10-05 · GitHub API 快照</span></p>
         </div>
 
         <div class="term-body">
-<p><strong>一句话</strong>：技术上很优雅，但<strong>是 AI 最难写的引擎</strong>。</p>
-<h2>⚠ 为什么对 AI 不友好</h2>
+<div class="bi-block"><span data-zh><p><strong>一句话</strong>：技术上很优雅，但<strong>是 AI 最难写的引擎</strong>。</p></span><span data-en><p><strong>In one line</strong>: technically elegant, and <strong>the hardest engine for AI to write correctly</strong>.</p></span></div>
+<div class="bi-block"><span data-zh><h2>⚠ 为什么对 AI 不友好</h2>
 <p>这一条是本站最强的判断，请认真对待：</p>
 <blockquote>
 <p><strong>Rust 的所有权模型对 AI 很不友好。</strong></p>
@@ -68,24 +68,46 @@
 <p>```</p>
 <p>⚠ 这类错误的成因是<strong>生命周期推断</strong> —— 而 AI 没有真正的类型系统模型，</p>
 <p>它只是在模仿训练数据里的代码形态。<strong>当代码需要跨越生命周期时，模仿就失效了。</strong></p>
-<p><strong>这与 AI 写 Python/TypeScript 的差距是数量级的</strong> —— 后两者里AI 写的代码</p>
-<p>即使风格不对也能跑，Rust 里直接编译失败。</p>
-<h2>它值得的地方</h2>
+<p><strong>这与 AI 写 Python/TypeScript 的差距是数量级的</strong> —— 后两者里 AI 写的代码</p>
+<p>即使风格不对也能跑，Rust 里直接编译失败。</p></span><span data-en><h2>⚠ Why it is unfriendly</h2>
+<p>This is the strongest judgement on this site; please take it seriously:</p>
+<blockquote>
+<p><strong>Rust's ownership model is very unfriendly to AI.</strong></p>
+</blockquote>
+<p>The most common error when AI writes Rust is a <strong>borrow-check failure</strong>:</p>
+<p>```</p>
+<p>cannot borrow <code>x</code> as mutable because it is also borrowed as immutable</p>
+<p>```</p>
+<p>⚠ These errors come from <strong>lifetime inference</strong> — and AI has no real model of a type system. It is imitating the *shape* of code it saw in training. <strong>When the code has to cross a lifetime boundary, the imitation breaks down.</strong></p>
+<p><strong>The gap between this and Python/TypeScript is an order of magnitude</strong> — in those languages AI-written code usually runs even if the style is wrong. In Rust it simply fails to compile.</p></span></div>
+<div class="bi-block"><span data-zh><h2>它值得的地方</h2>
 <p>⚠ 本站判断它<strong>技术方向是对的</strong>：</p>
 <ul>
 <li><strong>数据驱动</strong> —— 组件 + 系统，逻辑与数据分离</li>
 <li><strong>ECS 架构清晰</strong> —— 比继承体系更好维护</li>
 <li><strong>开源彻底</strong>（Apache-2.0）—— 官方写「free and open-source forever」</li>
-</ul>
-<h2>如果你还是要用</h2>
+</ul></span><span data-en><h2>Where it deserves credit</h2>
+<p>⚠ This site's judgement is that <strong>the technical direction is right</strong>:</p>
+<ul>
+<li><strong>Data-driven</strong> — components plus systems, separating logic from data</li>
+<li><strong>A clean ECS architecture</strong> — easier to maintain than an inheritance hierarchy</li>
+<li><strong>Genuinely open</strong> (Apache-2.0) — the official line is &quot;free and open-source forever&quot;</li>
+</ul></span></div>
+<div class="bi-block"><span data-zh><h2>如果你还是要用</h2>
 <p>⚠ 三个降低痛苦的做法：</p>
 <p>1. <strong>让 AI 写「一次性」的小系统</strong>，别让它写大的架构</p>
 <p>2. <strong>每次只改一处</strong> —— 借用错误会连锁，改一处好定位</p>
-<p>3. ⚠ <strong>准备好花更多时间在编译错误上</strong></p>
-<h2>什么时候选它 / 不选</h2>
+<p>3. ⚠ <strong>准备好花更多时间在编译错误上</strong></p></span><span data-en><h2>If you still want to use it</h2>
+<p>⚠ Three ways to reduce the pain:</p>
+<p>1. <strong>Have AI write small, throwaway systems</strong> rather than large architectural pieces</p>
+<p>2. <strong>Change one place at a time</strong> — borrow errors cascade, and one change is easy to locate</p>
+<p>3. ⚠ <strong>Budget more time for compile errors</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>什么时候选它 / 不选</h2>
 <p><strong>选</strong>：⚠ 你本人是 Rust 开发者（那你根本不需要 AI 帮你写）</p>
-<p><strong>不选</strong>：单人 + 用 AI 做游戏 —— 这是本站最强烈的建议</p>
-<h2>可核验事实</h2>
+<p><strong>不选</strong>：单人 + 用 AI 做游戏 —— 这是本站最强烈的建议</p></span><span data-en><h2>When to pick it, and when not to</h2>
+<p><strong>Pick it if</strong>: ⚠ you are a Rust developer yourself (in which case you do not need AI to write it)</p>
+<p><strong>Do not pick it if</strong>: you are solo and using AI — this is the site's strongest recommendation</p></span></div>
+<div class="bi-block"><span data-zh><h2>可核验事实</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>项</th><th>值</th><th>核验源</th></tr></thead><tbody>
 <tr><td>仓库</td><td><code>bevyengine/bevy</code></td><td>GitHub API</td></tr>
 <tr><td>许可</td><td><strong>Apache-2.0</strong></td><td>同上</td></tr>
@@ -93,9 +115,18 @@
 <tr><td>★</td><td>48,611</td><td>同上</td></tr>
 <tr><td>最后提交</td><td>2026-10-04</td><td>同上（<strong>活跃</strong>）</td></tr>
 <tr><td>官方定位</td><td>“A refreshingly simple data-driven game engine built in Rust”</td><td>官方 README</td></tr>
-</tbody></table></div>
-<h2>术语</h2>
-<p>⚠ 「ECS」「数据驱动」这些词在 [Vibe Gaming 词条](../vibe-gaming.html) 里有解释。</p>
+</tbody></table></div></span><span data-en><h2>Verifiable facts</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead><tbody>
+<tr><td>Repository</td><td><code>bevyengine/bevy</code></td><td>GitHub API</td></tr>
+<tr><td>Licence</td><td><strong>Apache-2.0</strong></td><td>same</td></tr>
+<tr><td>Main language</td><td>Rust</td><td>same</td></tr>
+<tr><td>Stars</td><td>48,611</td><td>same</td></tr>
+<tr><td>Last push</td><td>2026-10-04</td><td>same (<strong>active</strong>)</td></tr>
+<tr><td>Official description</td><td>&quot;A refreshingly simple data-driven game engine built in Rust&quot;</td><td>official README</td></tr>
+</tbody></table></div></span></div>
+<div class="bi-block"><span data-zh><h2>术语</h2>
+<p>⚠ 「ECS」「数据驱动」这些词在 [Vibe Gaming 词条](../vibe-gaming.html) 里有解释。</p></span><span data-en><h2>Vocabulary</h2>
+<p>⚠ &quot;ECS&quot; and &quot;data-driven&quot; are explained in the [Vibe Gaming entry](../vibe-gaming.html).</p></span></div>
 <hr>
         </div>
 
