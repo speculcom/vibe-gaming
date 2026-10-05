@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>undefined · AI 做游戏</title>
-  <meta name="description" content="" />
+  <title>手感问题清单 · AI 做游戏</title>
+  <meta name="description" content="「手感不对」是六种不同的病，每种对应不同的参数。先诊断再改。" />
   <link rel="canonical" href="https://vg.specul.com/手感问题清单.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="undefined · AI 做游戏" />
+  <meta property="og:site_name" content="手感问题清单 · AI 做游戏" />
   <meta property="og:url" content="https://vg.specul.com/手感问题清单.html" />
-  <meta property="og:title" content="undefined · AI 做游戏" />
-  <meta property="og:description" content="" />
+  <meta property="og:title" content="手感问题清单 · AI 做游戏" />
+  <meta property="og:description" content="「手感不对」是六种不同的病，每种对应不同的参数。先诊断再改。" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
@@ -43,29 +43,19 @@
   </header>
   <main id="main">
 <div class="container">
-        <p class="kicker"><a href="./learn.html"><span data-zh>学习路径</span><span data-en>Learning path</span></a> · <span data-zh>关键词</span><span data-en>Keyword</span></p>
-        <h1 class="t-hero"></h1>
-        
+        <p class="kicker"><a href="./learn.html"><span data-zh>学习路径</span><span data-en>Learning path</span></a> · <span data-zh>第 3 阶段</span><span data-en>Stage 3</span></p>
+        <h1 class="t-hero">手感问题清单</h1>
+        <p class="lede">Game feel checklist</p>
 
         <div class="panel term-meta">
-          
-          
-          
+          <p class="t-lead"><span data-zh>**这一步决定什么**</span><span data-en>**What this stage decides**</span><span data-zh>：「手感不对」是六种不同的病，每种对应不同的参数。先诊断再改。</span><span data-en>: \"It does not feel right\" is six different problems, each with its own parameter. Diagnose first, then tune.</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：先分清是代码问题还是数值问题 —— 90% 的「飘」改两三个参数就能解决。</span><span data-en>: First work out whether it is a code problem or a numbers problem — 90% of \"floaty\" needs two or three values changed.</span></p>
+          <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span></p>
         </div>
 
         <div class="term-body">
-<hr>
-<p>zh: &quot;手感问题清单&quot;</p>
-<p>en: &quot;Game feel checklist&quot;</p>
-<p>stage: 3</p>
-<p>ord: 31</p>
-<p>what: &quot;「手感不对」是六种不同的病，每种对应不同的参数。先诊断再改。&quot;</p>
-<p>decision: &quot;先分清是代码问题还是数值问题 —— 90% 的「飘」改两三个参数就能解决。&quot;</p>
-<p>confidence: our-judgement</p>
-<hr>
-<h1>手感问题清单</h1>
-<p><strong>一句话</strong>：「手感不对」不是一种病，是六种。<strong>改错参数等于白改。</strong></p>
-<h2>先诊断</h2>
+<div class="bi-block"><span data-zh><p><strong>一句话</strong>：「手感不对」不是一种病，是六种。<strong>改错参数等于白改。</strong></p></span><span data-en><p><strong>In one line</strong>: &quot;it does not feel right&quot; is not one problem, it is six. <strong>Changing the wrong parameter achieves nothing.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>先诊断</h2>
 <p>⚠ <strong>顺序很重要</strong>：先确认它是手感问题还是代码问题。</p>
 <div class="table-wrap"><table class="src"><thead><tr><th>症状</th><th>先查这个</th><th>再调这个</th></tr></thead><tbody>
 <tr><td>⚠ <strong>按键后有延迟感</strong></td><td><strong>输入缓冲有没有？</strong></td><td>⚠ 很可能不是手感问题</td></tr>
@@ -74,28 +64,53 @@
 <tr><td><strong>滑</strong>（停不下来）</td><td>摩擦 vs 空中阻力的比例</td><td>增大地面摩擦；<strong>注意两者是独立参数</strong></td></tr>
 <tr><td>⚠ <strong>边缘判定模糊</strong></td><td><strong>碰撞盒是不是比视觉大</strong></td><td>玩家碰撞盒通常该小一点</td></tr>
 <tr><td><strong>操作延迟响应</strong></td><td>动画是否阻塞了输入</td><td>动画期间不应锁输入</td></tr>
-</tbody></table></div>
-<h2>三个最常被忽略的参数</h2>
+</tbody></table></div></span><span data-en><h2>Diagnose first</h2>
+<p>⚠ <strong>Order matters</strong>: establish whether it is a feel problem or a code problem.</p>
+<div class="table-wrap"><table class="src"><thead><tr><th>Symptom</th><th>Check this first</th><th>Then tune</th></tr></thead><tbody>
+<tr><td>⚠ <strong>Lag after a keypress</strong></td><td><strong>Is there an input buffer?</strong></td><td>⚠ It is probably not a feel problem at all</td></tr>
+<tr><td><strong>Floaty</strong></td><td>The gravity value</td><td>Raise gravity; add a little downward force on landing</td></tr>
+<tr><td><strong>Sticky</strong></td><td>Is air control too strong</td><td>Lower jump velocity; add coyote time</td></tr>
+<tr><td><strong>Slippery</strong> (won't stop)</td><td>The ratio of friction to air drag</td><td>Raise ground friction; <strong>note they are separate parameters</strong></td></tr>
+<tr><td>⚠ <strong>Uncertain edges</strong></td><td><strong>Is the collider larger than the sprite?</strong></td><td>A player's hitbox is usually smaller</td></tr>
+<tr><td><strong>Delayed response</strong></td><td>Is animation blocking input</td><td>Input should not be locked during animation</td></tr>
+</tbody></table></div></span></div>
+<div class="bi-block"><span data-zh><h2>三个最常被忽略的参数</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>参数</th><th>作用</th><th>忽略它的后果</th></tr></thead><tbody>
 <tr><td><strong>coyote time</strong></td><td>离开平台后仍可跳的宽限（帧）</td><td>玩家会感觉「我明明按了」</td></tr>
 <tr><td><strong>jump buffer</strong></td><td>落地前按跳会缓存（帧）</td><td>同上</td></tr>
 <tr><td><strong>可变跳跃高度</strong></td><td>松开跳跃键时截断上升</td><td>每次跳跃都一样高 → 失去控制感</td></tr>
 </tbody></table></div>
 <p>⚠ 这三个是「操作手感」的地基。**它们不解决就会一直觉得不对劲，</p>
-<p>但你可能说不出为什么。**</p>
-<h2>⚠ 最反直觉的一点</h2>
+<p>但你可能说不出为什么。**</p></span><span data-en><h2>The three most forgotten parameters</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>Parameter</th><th>What it does</th><th>What happens without it</th></tr></thead><tbody>
+<tr><td><strong>coyote time</strong></td><td>Grace window after leaving a platform during which you can still jump (in frames)</td><td>Players feel &quot;but I definitely pressed it&quot;</td></tr>
+<tr><td><strong>jump buffer</strong></td><td>A jump pressed before landing is remembered (in frames)</td><td>Same</td></tr>
+<tr><td><strong>Variable jump height</strong></td><td>Releasing the button cuts the rise short</td><td>Every jump is the same height → loss of control</td></tr>
+</tbody></table></div>
+<p>⚠ These three are the foundation of control feel. <strong>Without them something always feels off, and you may not be able to say why.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>⚠ 最反直觉的一点</h2>
 <blockquote>
 <p><strong>大部分「手感不对」是数值问题，不是代码问题。</strong></p>
 </blockquote>
 <p>把代码重写三遍不如把重力从 980 调到 1150 试一次。</p>
 <p>⚠ 而且改完要<strong>每次只改一个</strong> —— 一次改三个，你就不知道是哪个起的作用，</p>
-<p>下次遇到相似问题还是不知道怎么调。</p>
-<h2>判断你可以进入下一阶段了吗</h2>
+<p>下次遇到相似问题还是不知道怎么调。</p></span><span data-en><h2>⚠ The most counter-intuitive point</h2>
+<blockquote>
+<p><strong>Most &quot;it does not feel right&quot; cases are a numbers problem, not a code problem.</strong></p>
+</blockquote>
+<p>Rewriting the code three times is worse than trying gravity 1150 instead of 980 once.</p>
+<p>⚠ And change <strong>one thing at a time</strong> — change three and you will not know which one mattered, so the next time you meet a similar problem you still cannot tune it.</p></span></div>
+<div class="bi-block"><span data-zh><h2>判断你可以进入下一阶段了吗</h2>
 <ul class="checklist">
 <li> 别人玩过，<strong>没有问「这游戏怎么玩」</strong></li>
-<li> 你自己玩30 分钟不觉得无聊</li>
+<li> 你自己玩 30 分钟不觉得无聊</li>
 <li> 关键参数是<strong>可调</strong>的（不是硬编码）</li>
-</ul>
+</ul></span><span data-en><h2>Can you move to the next stage?</h2>
+<ul class="checklist">
+<li> Someone else played it and <strong>did not ask &quot;how do I play this?&quot;</strong></li>
+<li> You have played it for 30 minutes and still find it interesting</li>
+<li> The key parameters are <strong>adjustable</strong> rather than hard-coded</li>
+</ul></span></div>
 <hr>
         </div>
 
