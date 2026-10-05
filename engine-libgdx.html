@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libGDX · 引擎档案 · AI 做游戏</title>
+  <meta name="description" content="Java 生态里唯一的完整游戏引擎 —— AI 写得不错，但你得先接受 JVM 的构建流程。" />
+  <link rel="canonical" href="https://vg.specul.com/engine-libgdx.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="libGDX · 引擎档案 · AI 做游戏" />
+  <meta property="og:url" content="https://vg.specul.com/engine-libgdx.html" />
+  <meta property="og:title" content="libGDX · 引擎档案 · AI 做游戏" />
+  <meta property="og:description" content="Java 生态里唯一的完整游戏引擎 —— AI 写得不错，但你得先接受 JVM 的构建流程。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <style>:root { --accent: #f5c542; }</style>
+</head>
+<body class="brand-ambient" style="--accent:#f5c542">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/" aria-current="page"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+<div class="container">
+        <p class="kicker"><a href="./learn.html"><span data-zh>引擎档案</span><span data-en>Engine profiles</span></a></p>
+        <h1 class="t-hero">libGDX</h1>
+        <p class="lede"><span data-zh>Java / Kotlin</span><span data-en>Java / Kotlin</span> · Java 跨平台</p>
+
+        <div class="panel term-meta">
+          <p class="t-lead"><span data-zh>**对 AI 的友好度**</span><span data-en>**How AI-friendly it is**</span><span data-zh>：★★★☆（一般）</span><span data-en>: ★★★☆ (mixed)</span></p>
+          <p class="t-sm"><span data-zh>**一句话**</span><span data-en>**In one line**</span><span data-zh>：Java 生态里唯一的完整游戏引擎 —— AI 写得不错，但你得先接受 JVM 的构建流程。</span><span data-en>: Java 生态里唯一的完整游戏引擎 —— AI 写得不错，但你得先接受 JVM 的构建流程。</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：⚠ 跨平台需求明确（尤其要 Android）时才选它。桌面项目直接选 Godot。</span><span data-en>: ⚠ 跨平台需求明确（尤其要 Android）时才选它。桌面项目直接选 Godot。</span></p>
+          <p class="t-sm"><span data-zh>**适合**</span><span data-en>**Best for**</span><span data-zh>：⚠ 要发布到 Android、且团队用 Java/Kotlin</span><span data-en>: ⚠ 要发布到 Android、且团队用 Java/Kotlin</span></p>
+          <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span> · <span data-zh>事实核验：2026-10-05 · GitHub API 快照</span><span data-en>Facts verified: 2026-10-05 · GitHub API 快照</span></p>
+        </div>
+
+        <div class="term-body">
+<p><strong>一句话</strong>：Java/Kotlin 生态里的完整引擎。<strong>AI 写得不错，但构建流程是它的门槛。</strong></p>
+<h2>对 AI 友好的部分</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>原因</th><th>说明</th></tr></thead><tbody>
+<tr><td><strong>Java 是训练数据大户</strong></td><td>语法严格但模式固定，AI 的 Java 能力优于 Rust/C++</td></tr>
+<tr><td><strong>Kotlin 也很好写</strong></td><td>协程与空安全降低了出错的可能</td></tr>
+<tr><td><strong>Apache-2.0</strong></td><td>商用无阻碍</td></tr>
+<tr><td><strong>跨平台成熟</strong></td><td>桌面 + Android + iOS + Web</td></tr>
+</tbody></table></div>
+<h2>⚠ 它的真正门槛：构建</h2>
+<p><strong>这是 AI 帮不上忙的地方</strong>：</p>
+<ul>
+<li>Gradle 依赖解析 —— 版本冲突时的报错<strong>极难读懂</strong></li>
+<li>Android 打包需要 Android SDK —— 环境配置本身就是一道坎</li>
+<li>⚠ <strong>AI 会写出能编译逻辑但配不出环境的构建文件</strong></li>
+</ul>
+<p>⚠ 这一点与 S5「导出与发布」是同一类问题：<strong>确定性工程，模型只能猜。</strong></p>
+<h2>什么时候选它 / 不选</h2>
+<p><strong>选</strong>：⚠ 需要 Android 发布、团队用 Java/Kotlin、跨平台是硬需求</p>
+<p><strong>不选</strong>：只做桌面或网页（Godot 或 Pixi 都更省事）</p>
+<h2>可核验事实</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>项</th><th>值</th><th>核验源</th></tr></thead><tbody>
+<tr><td>仓库</td><td><code>libgdx/libgdx</code></td><td>GitHub API</td></tr>
+<tr><td>许可</td><td><strong>Apache-2.0</strong></td><td>同上</td></tr>
+<tr><td>主语言</td><td>Java</td><td>同上</td></tr>
+<tr><td>★</td><td>25,422</td><td>同上</td></tr>
+<tr><td>最后提交</td><td>2026-09-24</td><td>同上（活跃）</td></tr>
+<tr><td>官方定位</td><td>“Desktop/Android/HTML5/iOS Java game development framework”</td><td>官方 README</td></tr>
+</tbody></table></div>
+<hr>
+        </div>
+
+        <div class="panel is-slim">
+          <p><a href="./learn.html"><span data-zh>← 返回学习路径</span><span data-en>← Back to the learning path</span></a> · <a href="./"><span data-zh>首页</span><span data-en>Home</span></a></p>
+        </div>
+      </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-vibe-gaming" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
