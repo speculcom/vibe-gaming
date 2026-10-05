@@ -49,31 +49,44 @@
 
         <div class="panel term-meta">
           <p class="t-lead"><span data-zh>**对 AI 的友好度**</span><span data-en>**How AI-friendly it is**</span><span data-zh>：★★★★（友好）</span><span data-en>: ★★★★ (friendly)</span></p>
-          <p class="t-sm"><span data-zh>**一句话**</span><span data-en>**In one line**</span><span data-zh>：2D 网页游戏里对 AI 最友好的选择 —— 因为 TypeScript 是 AI 最擅长的语言之一。</span><span data-en>: 2D 网页游戏里对 AI 最友好的选择 —— 因为 TypeScript 是 AI 最擅长的语言之一。</span></p>
-          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：做 2D 网页游戏，选它。前提是你能接受没有内置物理。</span><span data-en>: 做 2D 网页游戏，选它。前提是你能接受没有内置物理。</span></p>
-          <p class="t-sm"><span data-zh>**适合**</span><span data-en>**Best for**</span><span data-zh>：2D 网页游戏、小游戏原型</span><span data-en>: 2D 网页游戏、小游戏原型</span></p>
+          <p class="t-sm"><span data-zh>**一句话**</span><span data-en>**In one line**</span><span data-zh>：2D 网页游戏里对 AI 最友好的选择 —— 因为 TypeScript 是 AI 最擅长的语言之一。</span><span data-en>: The most AI-friendly choice for 2D web games — because TypeScript is one of the languages AI is best at.</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：做 2D 网页游戏，选它。前提是你能接受没有内置物理。</span><span data-en>: For a 2D web game, pick it — provided you can live without built-in physics.</span></p>
+          <p class="t-sm"><span data-zh>**适合**</span><span data-en>**Best for**</span><span data-zh>：2D 网页游戏、小游戏原型</span><span data-en>: 2D web games and small prototypes</span></p>
           <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span> · <span data-zh>事实核验：2026-10-05 · GitHub API 快照</span><span data-en>Facts verified: 2026-10-05 · GitHub API 快照</span></p>
         </div>
 
         <div class="term-body">
-<p><strong>一句话</strong>：做 2D 网页游戏时，它和 Three.js 共享「AI 最友好」的资格。</p>
-<h2>为什么对 AI 友好</h2>
+<div class="bi-block"><span data-zh><p><strong>一句话</strong>：做 2D 网页游戏时，它和 Three.js 共享「AI 最友好」的资格。</p></span><span data-en><p><strong>In one line</strong>: for 2D web games, it shares with Three.js the title of &quot;most AI-friendly&quot;.</p></span></div>
+<div class="bi-block"><span data-zh><h2>为什么对 AI 友好</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>原因</th><th>说明</th></tr></thead><tbody>
 <tr><td><strong>TypeScript</strong></td><td>训练数据最多、且带类型检查 —— AI 写错的概率明显低于其他游戏语言</td></tr>
 <tr><td><strong>WebGL/WebGPU</strong></td><td>跑在浏览器里，<strong>不需要装任何东西</strong>就能分享</td></tr>
 <tr><td><strong>概念少</strong></td><td>Sprite / Container / Texture —— 不需要学引擎架构</td></tr>
 <tr><td><strong>MIT 许可</strong></td><td>商用无阻碍</td></tr>
-</tbody></table></div>
-<h2>它的代价</h2>
+</tbody></table></div></span><span data-en><h2>Why it is AI-friendly</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>Reason</th><th>Explanation</th></tr></thead><tbody>
+<tr><td><strong>TypeScript</strong></td><td>The most training data of any language, plus type checking — AI makes noticeably fewer mistakes in it than in other game languages</td></tr>
+<tr><td><strong>WebGL / WebGPU</strong></td><td>It runs in the browser, so <strong>you install nothing</strong> to share it</td></tr>
+<tr><td><strong>Few concepts</strong></td><td>Sprite / Container / Texture — no engine architecture to learn</td></tr>
+<tr><td><strong>MIT licence</strong></td><td>No obstacle to commercial use</td></tr>
+</tbody></table></div></span></div>
+<div class="bi-block"><span data-zh><h2>它的代价</h2>
 <ul>
 <li>⚠ <strong>没有内置物理系统</strong> —— 得自己接（matter.js / planck.js）</li>
 <li><strong>没有场景管理</strong> —— 大项目要自己组织</li>
-<li><strong>2D only</strong> —— 做 3D 得换Three.js</li>
-</ul>
-<h2>什么时候选它 / 不选</h2>
+<li><strong>2D only</strong> —— 做 3D 得换 Three.js</li>
+</ul></span><span data-en><h2>What it costs</h2>
+<ul>
+<li>⚠ <strong>No built-in physics</strong> — you attach one yourself (matter.js / planck.js)</li>
+<li><strong>No scene management</strong> — larger projects need their own organisation</li>
+<li><strong>2D only</strong> — for 3D you would switch to Three.js</li>
+</ul></span></div>
+<div class="bi-block"><span data-zh><h2>什么时候选它 / 不选</h2>
 <p><strong>选</strong>：2D 网页游戏、快速原型、Game Jam</p>
-<p><strong>不选</strong>：需要完整引擎功能（碰撞、场景、资源管理都现成）</p>
-<h2>可核验事实</h2>
+<p><strong>不选</strong>：需要完整引擎功能（碰撞、场景、资源管理都现成）</p></span><span data-en><h2>When to pick it, and when not to</h2>
+<p><strong>Pick it for</strong>: 2D web games, quick prototypes, game jams</p>
+<p><strong>Do not pick it if</strong>: you need complete engine features out of the box (collision, scenes, asset management)</p></span></div>
+<div class="bi-block"><span data-zh><h2>可核验事实</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>项</th><th>值</th><th>核验源</th></tr></thead><tbody>
 <tr><td>仓库</td><td><code>pixijs/pixijs</code></td><td>GitHub API</td></tr>
 <tr><td>许可</td><td><strong>MIT</strong></td><td>同上</td></tr>
@@ -81,7 +94,15 @@
 <tr><td>★</td><td>48,284</td><td>同上</td></tr>
 <tr><td>最后提交</td><td>2026-10-03</td><td>同上（<strong>活跃</strong>）</td></tr>
 <tr><td>官方定位</td><td>“The HTML5 Creation Engine”</td><td>官方 README</td></tr>
-</tbody></table></div>
+</tbody></table></div></span><span data-en><h2>Verifiable facts</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead><tbody>
+<tr><td>Repository</td><td><code>pixijs/pixijs</code></td><td>GitHub API</td></tr>
+<tr><td>Licence</td><td><strong>MIT</strong></td><td>same</td></tr>
+<tr><td>Main language</td><td>TypeScript</td><td>same</td></tr>
+<tr><td>Stars</td><td>48,284</td><td>same</td></tr>
+<tr><td>Last push</td><td>2026-10-03</td><td>same (<strong>active</strong>)</td></tr>
+<tr><td>Official description</td><td>&quot;The HTML5 Creation Engine&quot;</td><td>official README</td></tr>
+</tbody></table></div></span></div>
 <hr>
         </div>
 
