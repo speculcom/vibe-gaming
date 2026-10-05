@@ -514,3 +514,24 @@ dl.axes { margin: 0; }
 .stage-list b{flex:0 0auto;font-weight:500}
 .stage-list .t-sm{color:var(--text-dim)}
 .t-lead{font-size:15px;line-height:1.7}
+
+/* ── 立论层（P1）── */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.src td{vertical-align:top}
+table.src td b{font-weight:500}
+.cost{font-weight:500;white-space:nowrap}
+.cost.down-heavy{color:var(--vio)}
+.cost.down-part{color:var(--vio);opacity:.8}
+.cost.down-little{color:var(--text-dim)}
+.cost.down-barely{color:var(--text-dim);opacity:.7}
+.t-xs{font-size:12px;line-height:1.6;color:var(--text-dim)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.2em}
+@media (max-width:640px){.two-col{grid-template-columns:1fr;gap:1em}}
+.fit-yes{color:var(--cyan);font-size:14px;margin:0 0 .4em}
+.fit-no{color:var(--text-dim);font-size:14px;margin:0 0 .4em}
+.fit-list{list-style:none;padding:0;margin:0}
+.fit-list li{padding:.4em 0;border-top:1px solid var(--border);font-size:13px;line-height:1.6}
+.fit-list li:first-child{border-top:0}
+.fit-list b{display:block;font-weight:500}
+.fit-list .t-sm{color:var(--text-dim)}
+.warn-inline{color:var(--gold)}
