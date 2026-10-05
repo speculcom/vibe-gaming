@@ -565,3 +565,19 @@ ul.checklist{list-style:none;padding-left:0}
 ul.checklist li::before{content:"□ ";color:var(--text-dim)}
 .kicker a{color:inherit;text-decoration:none}
 .kicker a:hover{color:var(--vio)}
+
+/* ── 引擎档案（P3）── */
+.eng-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.7em}
+.eng-card{display:grid;gap:.3em;padding:.85em .95em;border:1px solid var(--border);
+  border-radius:var(--r-sm);text-decoration:none;transition:border-color .15s}
+.eng-card:hover{border-color:var(--vio)}
+.eng-head{display:flex;align-items:baseline;gap:.5em;flex-wrap:wrap}
+.eng-head b{font-weight:500;color:var(--text)}
+.ai-badge{font-size:11px;padding:.1em .45em;border-radius:3px;white-space:nowrap}
+.ai-badge.high{background:rgba(29,158,117,.16);color:#0F6E56}
+.ai-badge.medium{background:rgba(245,197,66,.16);color:#854F0B}
+.ai-badge.low{background:rgba(226,75,74,.14);color:#A32D2D}
+.eng-card .t-sm{font-size:12px;line-height:1.55;color:var(--text-dim)}
+.eng-meta{font-size:11px;color:var(--text-dim);opacity:.8}
+.eng-meta code{font-size:11px}
+.mt-2{margin-top:.6em}
