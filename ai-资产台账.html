@@ -48,26 +48,35 @@
         <p class="lede">AI asset ledger</p>
 
         <div class="panel term-meta">
-          <p class="t-lead"><span data-zh>**这一步决定什么**</span><span data-en>**What this stage decides**</span><span data-zh>：一份记录「每个资产从哪来、能不能商用」的表格。它不是法务要求，是保命要求。</span><span data-en>: 一份记录「每个资产从哪来、能不能商用」的表格。它不是法务要求，是保命要求。</span></p>
-          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：建表成本 10 分钟，不建的成本是项目作废。</span><span data-en>: 建表成本 10 分钟，不建的成本是项目作废。</span></p>
+          <p class="t-lead"><span data-zh>**这一步决定什么**</span><span data-en>**What this stage decides**</span><span data-zh>：一份记录「每个资产从哪来、能不能商用」的表格。它不是法务要求，是保命要求。</span><span data-en>: A table recording where each asset came from and whether it can be used commercially. It is not a legal formality — it is what saves the project.</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：建表成本 10 分钟，不建的成本是项目作废。</span><span data-en>: Building it costs ten minutes. Not building it can void the project.</span></p>
           <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span></p>
         </div>
 
         <div class="term-body">
-<p><strong>定义</strong>：一张记录每份资产<strong>来源</strong>与<strong>授权</strong>的表格。</p>
-<h2>为什么它比你想的更重要</h2>
+<div class="bi-block"><span data-zh><p><strong>定义</strong>：一张记录每份资产<strong>来源</strong>与<strong>授权</strong>的表格。</p></span><span data-en><p><strong>Definition</strong>: a table recording the <strong>source</strong> and <strong>licence</strong> of every asset.</p></span></div>
+<div class="bi-block"><span data-zh><h2>为什么它比你想的更重要</h2>
 <p>⚠ <strong>AI 生成资产的商用授权通常不明确</strong> —— 模型训练用了什么数据、</p>
 <p>输出能不能商用，取决于服务条款，而<strong>条款随时会变</strong>。</p>
-<p>半年后你想上架时，才发现当初用的那个服务<strong>改了条款</strong> —— 你无从得知。</p>
-<h2>最简格式</h2>
+<p>半年后你想上架时，才发现当初用的那个服务<strong>改了条款</strong> —— 你无从得知。</p></span><span data-en><h2>Why it matters more than you would think</h2>
+<p>⚠ <strong>The commercial rights of AI-generated assets are usually unclear</strong> — what data the model was trained on, and whether you may sell its output, comes down to the service terms. And <strong>terms change</strong>.</p>
+<p>Six months later, when you try to ship, you find out the service you used changed its terms — and you had no way of knowing.</p></span></div>
+<div class="bi-block"><span data-zh><h2>最简格式</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>文件/目录</th><th>来源</th><th>授权</th><th>待确认</th></tr></thead><tbody>
 <tr><td><code>hero.png</code></td><td>自己画的</td><td>本人原创</td><td>—</td></tr>
 <tr><td><code>bgm.mp3</code></td><td>生成式音乐工具 X</td><td>见条款 v2026-01</td><td>⚠ 是</td></tr>
 <tr><td><code>coin.wav</code></td><td>freesound.org</td><td>CC0</td><td>—</td></tr>
 <tr><td><code>font.ttf</code></td><td>某某字体站</td><td>⚠ 个人免费</td><td>⚠ 是</td></tr>
 </tbody></table></div>
-<p><strong>规则：发布前「待确认」列必须清零。</strong></p>
-<h2>三条实操规则</h2>
+<p><strong>规则：发布前「待确认」列必须清零。</strong></p></span><span data-en><h2>The simplest useful format</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>File / directory</th><th>Source</th><th>Licence</th><th>Unconfirmed</th></tr></thead><tbody>
+<tr><td><code>hero.png</code></td><td>drawn by me</td><td>my own work</td><td>—</td></tr>
+<tr><td><code>bgm.mp3</code></td><td>generative music tool X</td><td>see terms v2026-01</td><td>⚠ yes</td></tr>
+<tr><td><code>coin.wav</code></td><td>freesound.org</td><td>CC0</td><td>—</td></tr>
+<tr><td><code>font.ttf</code></td><td>some font site</td><td>⚠ free for personal use</td><td>⚠ yes</td></tr>
+</tbody></table></div>
+<p><strong>Rule: before you ship, the &quot;unconfirmed&quot; column must be empty.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>三条实操规则</h2>
 <p><strong>1. 程序化生成最安全</strong></p>
 <p>代码画出来的图形版权归你，没有第三方来源问题。</p>
 <p>程序化美术（procedural art）在这一层优势明显。</p>
@@ -76,16 +85,27 @@
 <p>而绝大多数免费字体的授权是「个人免费」，<strong>不含商用</strong>。</p>
 <p><strong>3. CC-BY 需要署名</strong></p>
 <p>用了 CC-BY 素材而没署名，<strong>可能违反协议</strong>。</p>
-<p>混用时注意保留署名信息。</p>
-<h2>⚠ 一个常见误解</h2>
+<p>混用时注意保留署名信息。</p></span><span data-en><h2>Three practical rules</h2>
+<p><strong>1. Procedural generation is the safest</strong></p>
+<p>Code-drawn shapes are yours; there is no third-party provenance question. Procedural art has a clear advantage here.</p>
+<p><strong>2. ⚠ Fonts are the most forgotten</strong></p>
+<p>Everyone checks the licence on images and audio. Almost nobody checks fonts — and most &quot;free&quot; fonts are free for personal use, <strong>not</strong> for commercial use.</p>
+<p><strong>3. CC-BY requires attribution</strong></p>
+<p>Using CC-BY material without crediting it <strong>may breach the licence</strong>. Keep the attribution when you mix.</p></span></div>
+<div class="bi-block"><span data-zh><h2>⚠ 一个常见误解</h2>
 <blockquote>
 <p>「AI 生成的就都是我的」</p>
 </blockquote>
 <p>⚠ 不一定。模型训练数据的来源通常不明确，</p>
-<p><strong>「输出属于用户」是服务方给的授权，不是版权法的结论</strong>。</p>
-<h2>什么时候建</h2>
+<p><strong>「输出属于用户」是服务方给的授权，不是版权法的结论</strong>。</p></span><span data-en><h2>⚠ A common misconception</h2>
+<blockquote>
+<p>&quot;AI made it, so it's mine&quot;</p>
+</blockquote>
+<p>⚠ Not necessarily. The provenance of the training data is usually unclear, and <strong>&quot;the output belongs to you&quot; is a grant from the service provider, not a conclusion of copyright law.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>什么时候建</h2>
 <p><strong>从第一天就建。</strong> 事后补是补不回来的 —— 你已经想不起来</p>
-<p>三周前那张图是从哪拿的了。</p>
+<p>三周前那张图是从哪拿的了。</p></span><span data-en><h2>When to start it</h2>
+<p><strong>Day one.</strong> You cannot backfill it later — by then you will not remember where the image from three weeks ago came from.</p></span></div>
 <hr>
         </div>
 
