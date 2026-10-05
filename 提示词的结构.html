@@ -48,43 +48,69 @@
         <p class="lede">Structuring the prompt</p>
 
         <div class="panel term-meta">
-          <p class="t-lead"><span data-zh>**这一步决定什么**</span><span data-en>**What this stage decides**</span><span data-zh>：同样是「做一个跳跃游戏」，给不给边界决定了 AI 写出的是脚手架还是能跑的东西。</span><span data-en>: 同样是「做一个跳跃游戏」，给不给边界决定了 AI 写出的是脚手架还是能跑的东西。</span></p>
-          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：每次给三样：输入映射、具体数值、明确的「不要做什么」。</span><span data-en>: 每次给三样：输入映射、具体数值、明确的「不要做什么」。</span></p>
+          <p class="t-lead"><span data-zh>**这一步决定什么**</span><span data-en>**What this stage decides**</span><span data-zh>：同样是「做一个跳跃游戏」，给不给边界决定了 AI 写出的是脚手架还是能跑的东西。</span><span data-en>: For the same request — \"make a platformer\" — whether you give boundaries decides whether AI writes scaffolding or something that runs.</span></p>
+          <p class="t-sm"><span data-zh>**本站的判断**</span><span data-en>**Our judgement**</span><span data-zh>：每次给三样：输入映射、具体数值、明确的「不要做什么」。</span><span data-en>: Give three things each time: the input mapping, actual numbers, and an explicit \"do not do X\".</span></p>
           <p class="t-xs muted"><span data-zh>性质：本站的判断，未经实测</span><span data-en>Nature: the site's judgement, not measured</span></p>
         </div>
 
         <div class="term-body">
-<p><strong>一句话</strong>：AI 写不出能跑的游戏，多半不是因为它不会，而是因为你没说清要什么。</p>
-<h2>三样必须给的</h2>
+<div class="bi-block"><span data-zh><p><strong>一句话</strong>：AI 写不出能跑的游戏，多半不是因为它不会，而是因为你没说清要什么。</p></span><span data-en><p><strong>In one line</strong>: AI usually fails to produce a runnable game not because it cannot code, but because you did not say what you wanted.</p></span></div>
+<div class="bi-block"><span data-zh><h2>三样必须给的</h2>
 <div class="table-wrap"><table class="src"><thead><tr><th>要给</th><th>为什么</th><th>例子</th></tr></thead><tbody>
 <tr><td><strong>输入 → 行为映射</strong></td><td>不给会得到「按 WASD 移动」这种废话</td><td>「左键跳跃，Shift 冲刺，R 重开」</td></tr>
 <tr><td><strong>具体数值</strong></td><td>不给会得到一堆 <code>TODO</code></td><td>「跳跃初速 -420，重力 980」</td></tr>
 <tr><td>⚠ <strong>明确的「不要做什么」</strong></td><td><strong>不给会得到一个塞满所有系统的巨文件</strong></td><td>「这一版不要敌人、不要 UI、不要动画」</td></tr>
 </tbody></table></div>
-<p>⚠ 第三条最容易漏，而且<strong>影响最大</strong>。</p>
-<h2>⚠ 一个真实的失败模式</h2>
+<p>⚠ 第三条最容易漏，而且<strong>影响最大</strong>。</p></span><span data-en><h2>Three things you must give</h2>
+<div class="table-wrap"><table class="src"><thead><tr><th>Give</th><th>Why</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>An input → behaviour mapping</strong></td><td>Without it you get filler like &quot;move with WASD&quot;</td><td>&quot;Left click jumps, Shift dashes, R restarts&quot;</td></tr>
+<tr><td><strong>Actual numbers</strong></td><td>Without them you get a pile of <code>TODO</code>s</td><td>&quot;Jump velocity -420, gravity 980&quot;</td></tr>
+<tr><td>⚠ <strong>An explicit &quot;do not do X&quot;</strong></td><td><strong>Without it you get one giant file containing every system imaginable</strong></td><td>&quot;This version: no enemies, no UI, no animation&quot;</td></tr>
+</tbody></table></div>
+<p>⚠ The third is the easiest to forget, and it has the <strong>largest effect</strong>.</p></span></div>
+<div class="bi-block"><span data-zh><h2>⚠ 一个真实的失败模式</h2>
 <p>你说：「做一个平台跳跃游戏」</p>
 <p>AI 会给你：玩家、敌人、关卡、UI、动画、存档、音效、暂停菜单 —— <strong>全部都有，全部没做深</strong>。</p>
 <p>然后你在调试器里花三天找「为什么角色会掉出屏幕」。</p>
-<p><strong>你得到的不是少功能，而是一堆半成品。</strong></p>
-<h2>更好的写法</h2>
+<p><strong>你得到的不是少功能，而是一堆半成品。</strong></p></span><span data-en><h2>⚠ A real failure mode</h2>
+<p>You say: &quot;make a platformer&quot;.</p>
+<p>AI gives you: player, enemies, levels, UI, animation, saves, sound effects, pause menu — <strong>all present, none finished</strong>.</p>
+<p>Then you spend three days in a debugger looking for why the character falls off the screen.</p>
+<p><strong>What you get is not fewer features — it is a pile of half-finished ones.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>更好的写法</h2>
 <p>```</p>
 <p>写 Godot GDScript，一个最小可玩的原型：</p>
 <ul>
 <li>玩家：CharacterBody2D，左右移动 + 跳跃</li>
 <li>数值：重力 980，跳跃初速 -420，coyote time 100ms</li>
-<li>地面用 StaticBody2D，碰撞层设layer 1 / mask 1</li>
+<li>地面用 StaticBody2D，碰撞层设 layer 1 / mask 1</li>
 <li>⚠ 不要：敌人、UI、动画、存档、音效 —— 这次只做移动与跳跃</li>
 </ul>
 <p>```</p>
-<p>⚠ 注意最后一行。<strong>它省下的时间比它占用的字数多得多。</strong></p>
-<h2>迭代的节奏</h2>
+<p>⚠ 注意最后一行。<strong>它省下的时间比它占用的字数多得多。</strong></p></span><span data-en><h2>A better prompt</h2>
+<p>```</p>
+<p>Write Godot GDScript for a minimal playable prototype:</p>
+<ul>
+<li>Player: CharacterBody2D with left/right movement and jumping</li>
+<li>Numbers: gravity 980, jump velocity -420, coyote time 100 ms</li>
+<li>Ground uses StaticBody2D, collision layer 1 / mask 1</li>
+<li>⚠ Do not: enemies, UI, animation, saves, sound effects — this round is movement and jumping only</li>
+</ul>
+<p>```</p>
+<p>⚠ Note the last line. <strong>It saves far more time than the words it costs.</strong></p></span></div>
+<div class="bi-block"><span data-zh><h2>迭代的节奏</h2>
 <p>⚠ <strong>不要一次要全部</strong>。正确的顺序：</p>
 <p>1. 第一次：只做移动 → 跑起来</p>
 <p>2. 第二次：加跳跃 → 跑起来</p>
 <p>3. 第三次：加相机跟随 → 跑起来</p>
 <p>4. 第四次：才加视觉</p>
-<p>⚠ 每一轮都应该是<strong>「能跑的东西」</strong>，不是「一部分代码」。</p>
+<p>⚠ 每一轮都应该是<strong>「能跑的东西」</strong>，不是「一部分代码」。</p></span><span data-en><h2>The rhythm of iteration</h2>
+<p>⚠ <strong>Do not ask for everything at once.</strong> The right order:</p>
+<p>1. First round: movement only → it runs</p>
+<p>2. Second: add jumping → it runs</p>
+<p>3. Third: add camera follow → it runs</p>
+<p>4. Fourth: only then add visuals</p>
+<p>⚠ Each round should produce <strong>&quot;something that runs&quot;</strong>, not &quot;part of the code&quot;.</p></span></div>
 <hr>
         </div>
 
