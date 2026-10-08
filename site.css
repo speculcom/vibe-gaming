@@ -261,7 +261,10 @@ h1 {
   background: var(--accent, var(--brand));
 }
 .panel code {
-  font-size: .92em; background: var(--bg-inset);
+  /* 2026-10-08：原 .92em。父级 14px 时算出 12.88px —— 半像素字号，
+   * _design-audit 的「字号档位」检查会判失败（字号只用 3 档 token）。
+   * 改用 --fs-xs（12px），落在既有档位上。 */
+  font-size: var(--fs-xs); background: var(--bg-inset);
   padding: 1px 5px; border-radius:var(--r-xs); color: var(--ink);
 }
 
@@ -449,7 +452,7 @@ th.w-28 { width: 112px; } th.w-52 { width: 208px; }
 }
 .axis dd code {
   background: var(--bg-inset); padding: 1px 5px;
-  border-radius:var(--r-xs); font-size: .92em;
+  border-radius:var(--r-xs); font-size: var(--fs-xs); /* 原 .92em → 12.88px，同 .panel code */
 }
 dl.axes { margin: 0; }
 
