@@ -510,6 +510,38 @@ dl.axes { margin: 0; }
 .crumbs span[aria-current="page"] { color: var(--ink); }
 .crumbs > * + *::before { content: "/"; margin-right: 6px; color: var(--ink-faint); }
 
+/* ── B6（2026-10-09）· 亮色主题的品牌色 ──
+   vg 原先**没有**亮色覆盖，于是深色主题的金色 #f5c542 直接用在白底上当文字色，
+   实测 1.62:1（引擎表里的引擎名就是这条）。这里按共享约定补一个压深档
+   （#906807：白底 5.06 / 各自柔和底 4.54，色相不变）。 */
+/* ⚠ 用 html[data-theme="light"]（特异性 0,1,1）而不是 [data-theme="light"]（0,1,0）：
+   页头用内联 <style>:root{--accent:…}</style> 设了本站强调色，同特异性下**看源码顺序**，
+   会把覆盖顶掉。提高一级就稳。另外要连 --accent 一起覆盖 ——
+   引擎表里的引擎名用的是 var(--accent)，不是 var(--brand)（第一次只改了 --brand，白改）。 */
+html[data-theme="light"] {
+  --accent: #906807;
+  --brand: #906807;
+  --brand-on: #ffffff;
+  --brand-soft: rgba(144, 104, 7, .10);
+  --brand-line: rgba(144, 104, 7, .30);
+}
+/* ── B4（2026-10-09）· 引擎决策树 ──
+   字号用整数 px（设计系统的硬规则，_design-audit 守着）。 */
+.etree{margin:1.2rem 0 0}
+.etree-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:flex-end}
+.etree-f{display:flex;flex-direction:column;gap:.25rem;min-width:12rem;flex:1 1 12rem}
+.etree-h{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
+.etree select{font:inherit;font-size:14px;padding:.35rem .5rem;border:1px solid var(--border);border-radius:var(--r-sm,8px);background:transparent;color:inherit}
+.etree-out{margin-top:1rem}
+.etree-card{border:1px solid var(--border);border-radius:var(--r-sm,8px);padding:.8rem 1rem;margin:.5rem 0}
+.etree-card.is-alt{opacity:.85}
+.etree-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+.etree-name{font-size:18px;margin:.15rem 0 .3rem}
+.etree-why{font-size:13px;opacity:.8;line-height:1.6}
+.etree-caveat{font-size:13px;opacity:.7;line-height:1.6;margin-top:.35rem}
+.etree-note{font-size:13px;opacity:.6;line-height:1.6;margin-top:.6rem}
+.etree-none{font-size:14px;opacity:.8}
+@media(max-width:560px){.etree-f{min-width:100%}}
 /* ── AI 做游戏站专属 ── */
 .stage-list{list-style:none;padding:0;margin:0}
 .stage-list li{display:flex;gap:.6em;align-items:baseline;padding:.45em 0;border-top:1px solid var(--border)}
@@ -577,13 +609,53 @@ ul.checklist li::before{content:"□ ";color:var(--text-dim)}
 .eng-head{display:flex;align-items:baseline;gap:.5em;flex-wrap:wrap}
 .eng-head b{font-weight:500;color:var(--text)}
 .ai-badge{font-size:11px;padding:.1em .45em;border-radius:3px;white-space:nowrap}
-.ai-badge.high{background:rgba(29,158,117,.16);color:#0F6E56}
-.ai-badge.medium{background:rgba(245,197,66,.16);color:#854F0B}
-.ai-badge.low{background:rgba(226,75,74,.14);color:#A32D2D}
+/* B5（2026-10-09）：徽标字色改为**分主题两套**。
+ * 原先#0F6E56/#854F0B/#A32D2D 是浅色主题用的深色字，直接用在深色卡片上只有 1.9–2.4:1
+ * （实测 _audit/a11y-contrast.mjs 报 15 处，全部集中在这几个徽标）。
+ * 深色主题的新值是**算出来的最小提亮量**（保证 ≥4.5:1），
+ * 浅色主题保留原来的深色值，用 [data-theme="light"] 覆盖。 */
+.ai-badge.high{background:rgba(29,158,117,.16);color:#599b8a}
+.ai-badge.medium{background:rgba(245,197,66,.16);color:#b5946a}
+.ai-badge.low{background:rgba(226,75,74,.14);color:#cf8a8a}
+[data-theme="light"] .ai-badge.high{color:#0F6E56}
+[data-theme="light"] .ai-badge.medium{color:#854F0B}
+[data-theme="light"] .ai-badge.low{color:#A32D2D}
 .eng-card .t-sm{font-size:12px;line-height:1.55;color:var(--text-dim)}
 .eng-meta{font-size:11px;color:var(--text-dim);opacity:.8}
 .eng-meta code{font-size:11px}
+/* 上手难度徽标（A6.4.3）——与 ai-badge 同形但不同轴：
+ * ai-badge 问「AI 写代码有多容易出错」，diff-badge 问「人装起来跑起来有多费事」。 */
+.diff-badge{font-size:11px;padding:.1em .45em;border-radius:3px;white-space:nowrap;background:var(--bg-soft);color:var(--text-dim)}
+.diff-badge.low{background:rgba(29,158,117,.16);color:#599b8a}
+.diff-badge.medium{background:rgba(245,197,66,.16);color:#b5946a}
+.diff-badge.high{background:rgba(226,75,74,.14);color:#cf8a8a}
+[data-theme="light"] .diff-badge.low{color:#0F6E56}
+[data-theme="light"] .diff-badge.medium{color:#854F0B}
+[data-theme="light"] .diff-badge.high{color:#A32D2D}
 .mt-2{margin-top:.6em}
 /* ── 双语正文（P5i18n）── */
 .bi-block{margin:0}
 .bi-block > span{display:block}
+
+/* ── 代码块（A6.4 补）──
+ * 本仓 5 个词条里本来就有代码围栏，但渲染器不认它 —— 页面上显示成字面反引号。
+ * 用「代码块自己的横向滚动容器」，不让页面整体横滚：全站硬约束是无横向滚动条。
+ * ⚠ 这段是 JS 模板字符串，注释里**不能出现反引号**，否则模板提前闭合（已踩一次）。 */
+pre.code{margin:.8em 0;padding:.85em 1em;background:var(--bg-inset);border:1px solid var(--border);
+  border-radius:var(--r-sm);overflow-x:auto;-webkit-overflow-scrolling:touch}
+pre.code code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  font-size:12.5px;line-height:1.65;white-space:pre;color:var(--text)}
+
+/* ── 词条页的「上一篇 / 下一篇」（A6.4.4）──
+ * 17 个词条串成一条有序路径（顺序由 build-terms.mjs 的 sort 决定，与 learn.html 一致）。
+ * ⚠ grid item 必须显式 min-width:0 且长词条名要 anywhere 换行 ——
+ *   全站硬约束「无横向滚动条」，词条名里最长的是「上下文窗口与 AI 写游戏」。*/
+.term-nav{display:grid;grid-template-columns:1fr 1fr;gap:.6em;margin:.55em 0 0}
+.term-nav a{display:grid;gap:.15em;min-width:0;padding:.6em .8em;border:1px solid var(--border);
+  border-radius:var(--r-sm);text-decoration:none;transition:border-color .15s}
+.term-nav a:hover{border-color:var(--vio)}
+.term-nav .tn-dir{font-size:11px;color:var(--text-dim)}
+.term-nav b{font-weight:500;font-size:13px;line-height:1.5;color:var(--text);overflow-wrap:anywhere}
+.term-nav .tn-next{text-align:right;justify-items:end}
+.term-nav .is-empty{border:0;padding:0}
+@media (max-width:640px){.term-nav{grid-template-columns:1fr}}
