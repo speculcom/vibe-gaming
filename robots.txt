@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://vg.specul.com/sitemap.xml
+Disallow:
